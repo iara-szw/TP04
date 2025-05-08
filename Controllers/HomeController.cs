@@ -17,8 +17,31 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Juego()
+    public IActionResult PartidaActual()
     {
+        ViewBag.palabraActual = Partida.devolverPalabraActual();
+        ViewBag.intentosRestante = Partida.cantIntentos;
+        return View();
+    }
+    public IActionResult arriesgarLetra(char letra)
+    {
+        if(Partida.cantIntentos == 0){
 
+        }else{
+            if(!Partida.siSeUso(letra)){
+                 Partida.esCorrecta(letra);
+            }
+            ViewBag.palabraActual = Partida.devolverPalabraActual();
+        }
+       
+        return View();
+    }
+    public IActionResult arriesgarPalabra(string palabra)
+    {
+        if(Partida.encontroLaPalabra(palabra)){
+            
+        }
+
+        return View();
     }
 }
