@@ -4,25 +4,29 @@
      static public List<char> palabraActual { get; private set; }
      static public List<char> letrasFallidas { get; private set; }
      static public int cantIntentos { get; private set; }
-
+     static public bool partidaGanada { get; private set; }  
+    static Partida(){
+        palabra = "";
+        palabraActual = new List<char>();
+        letrasFallidas = new List<char>();
+    }  
      static public void crearPartida(string Palabra)
     {
         palabra = Palabra.ToUpper();
-        palabraActual = new List<char>();
-        letrasFallidas = new List<char>();
+
         foreach (char letra in palabra)
         {
             palabraActual.Add('_');
         }
         cantIntentos = 6;
+        partidaGanada = false;
     }
 
     static public bool siSeUso(char letra){
         bool siSeUso= false;
-        siSeUso = buscarLetra(letra,palabraActual);
-        if(!siSeUso)
+        if(palabraActual.Contains(letra))
         {
-            siSeUso = buscarLetra(letra,letrasFallidas);
+            siSeUso = true;
         }
         return siSeUso;
     }
@@ -45,21 +49,11 @@
         return esCorrecta;
     }
     static public bool encontroLaPalabra(string palabraArriesgada){
-        bool encontrada = false;
+        bool partidaGanada = false;
         if(palabraArriesgada == palabra){
-            encontrada = true;
+            partidaGanada = true;
         }
-        return encontrada;
-    }
-    static public bool buscarLetra(char letra, List<char> listaABuscar){
-        bool seEncontro= false;
-        int i = 0;
-        while(!seEncontro && i<listaABuscar.Count()){
-           if(listaABuscar[i] == letra){
-            seEncontro=true;
-           }else{i++;}
-        }
-        return seEncontro;
+        return partidaGanada;
     }
     static public List<char>  devolverPalabraActual(){
         return palabraActual;

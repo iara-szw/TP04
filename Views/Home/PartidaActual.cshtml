@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Ahorcado - Juego";
+}
+<div>
+<h1>Palabra:</h1>
+@{foreach (char letra in ViewBag.palabraActual){
+    <h2>@letra</h2>
+}}
+
+
+<div>
+
+
