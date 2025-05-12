@@ -18,11 +18,16 @@ public class HomeController : Controller
     }
     public IActionResult PartidaActual()
     {
-        Partida.crearPartida("perro");
         ViewBag.palabraActual = Partida.devolverPalabraActual();
-        ViewBag.intentosRestante = Partida.cantIntentos;
+        if(ViewBag.palabraActual.Count == 0){
+            Partida.crearPartida("arboleada");
+             ViewBag.palabraActual = Partida.devolverPalabraActual();
+             ViewBag.intentosRestante = Partida.cantIntentos;
+        }
         return View();
     }
+
+    [HttpPost]
     public IActionResult arriesgarLetra(char letra)
     {
         if(Partida.cantIntentos == 0){
@@ -31,15 +36,17 @@ public class HomeController : Controller
             if(!Partida.siSeUso(letra)){
                  Partida.esCorrecta(letra);
             }
-            ViewBag.palabraActual = Partida.devolverPalabraActual();
+           
         }
-       
+         ViewBag.palabraActual = Partida.devolverPalabraActual();
+         ViewBag.intentosRestante = Partida.cantIntentos;
         return View();
     }
     public IActionResult arriesgarPalabra(string palabra)
     {
         Partida.encontroLaPalabra(palabra);
-         return View("RedirectToAction");
+
+         return RedirectToAction("resultado");
     }
       public IActionResult resultado()
     {

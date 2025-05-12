@@ -9,10 +9,11 @@
         palabra = "";
         palabraActual = new List<char>();
         letrasFallidas = new List<char>();
+
     }  
-     static public void crearPartida(string Palabra)
+     static public void crearPartida(string PalabraNueva)
     {
-        palabra = Palabra.ToUpper();
+        palabra = PalabraNueva.ToUpper();
 
         foreach (char letra in palabra)
         {
@@ -24,7 +25,8 @@
 
     static public bool siSeUso(char letra){
         bool siSeUso= false;
-        if(palabraActual.Contains(letra))
+    
+        if(palabraActual.Contains(letra.ToUpper()) || letrasFallidas.Contains(letra.ToUpper()))
         {
             siSeUso = true;
         }
@@ -33,11 +35,12 @@
     static public bool esCorrecta (char letra)
     {
         bool esCorrecta = false;
+        string letraNueva = letra.ToUpper();
         for (int i = 0; i < palabra.Length; i++)
         {
-            if (palabra[i] == letra)
+            if (palabra[i] == letraNueva)
             {
-                palabraActual[i] = letra;
+                palabraActual[i] = letraNueva;
                 esCorrecta = true;
             }
          }
