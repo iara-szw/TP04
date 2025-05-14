@@ -21,30 +21,37 @@
         }
         cantIntentos = 6;
         partidaGanada = false;
+    }  
+
+    static private char convertirChar(char letra){
+        string letraN = letra+"";
+        letraN.ToUpper();
+        char letraNueva = letraN[0];
+        return letraNueva;
     }
 
     static public bool siSeUso(char letra){
         bool siSeUso= false;
-    
-        if(palabraActual.Contains(letra.ToUpper()) || letrasFallidas.Contains(letra.ToUpper()))
+        char letraNueva = convertirChar(letra);
+        if(palabraActual.Contains(letraNueva) || letrasFallidas.Contains(letraNueva))
         {
             siSeUso = true;
         }
         return siSeUso;
     }
+
     static public bool esCorrecta (char letra)
     {
         bool esCorrecta = false;
-        string letraNueva = letra.ToUpper();
-        for (int i = 0; i < palabra.Length; i++)
-        {
-            if (palabra[i] == letraNueva)
-            {
+        char letraNueva = convertirChar(letra);
+        esCorrecta = palabra.Contains(letraNueva);
+        if(esCorrecta){
+              for(int i=0;i < palabra.Count(); i++){
+            if(palabra[i] == letraNueva){
                 palabraActual[i] = letraNueva;
-                esCorrecta = true;
             }
-         }
-        if (!esCorrecta)
+        }
+        }else
         {
                 letrasFallidas.Add(letra);
                 cantIntentos--;

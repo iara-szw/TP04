@@ -6,7 +6,9 @@ namespace TP04.Controllers;
 
 public class HomeController : Controller
 {
+  
     private readonly ILogger<HomeController> _logger;
+      
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
@@ -16,6 +18,8 @@ public class HomeController : Controller
     {
         return View();
     }
+
+
     public IActionResult PartidaActual()
     {
         ViewBag.palabraActual = Partida.devolverPalabraActual();
@@ -28,13 +32,13 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult arriesgarLetra(char letra)
+    public IActionResult arriesgarLetra(char letraNueva)
     {
         if(Partida.cantIntentos == 0){
             return RedirectToAction("resultado");
         }else{
-            if(!Partida.siSeUso(letra)){
-                 Partida.esCorrecta(letra);
+            if(!Partida.siSeUso(letraNueva)){
+                 Partida.esCorrecta(letraNueva);
             }
            
         }
@@ -42,6 +46,7 @@ public class HomeController : Controller
          ViewBag.intentosRestante = Partida.cantIntentos;
         return View();
     }
+   
     public IActionResult arriesgarPalabra(string palabra)
     {
         Partida.encontroLaPalabra(palabra);
