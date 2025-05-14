@@ -14,7 +14,7 @@
      static public void crearPartida(string PalabraNueva)
     {
         palabra = PalabraNueva.ToUpper();
-
+        palabraActual.Clear();
         foreach (char letra in palabra)
         {
             palabraActual.Add('_');
@@ -25,7 +25,7 @@
 
     static private char convertirChar(char letra){
         string letraN = letra+"";
-        letraN.ToUpper();
+        letraN = letraN.ToUpper();
         char letraNueva = letraN[0];
         return letraNueva;
     }
@@ -64,9 +64,6 @@
             partidaGanada = true;
         }
         return partidaGanada;
-    }
-    static public List<char>  devolverPalabraActual(){
-        return palabraActual;
     }
 
 }

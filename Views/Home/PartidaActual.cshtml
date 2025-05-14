@@ -3,16 +3,31 @@
 }
 <div>
 <h1>Palabra:</h1>
-@{foreach (char letra in ViewBag.palabraActual){
-    <h2>@letra</h2>
-}}
-@ViewBag.intentosRestante
-<form action='@Url.Action("arriesgarLetra")' method="post"> 
+@{
+    string palabra="";
+    foreach (char letra in ViewBag.palabraActual){
+    palabra = palabra + @letra + " ";
+    
+}}<h3>@palabra</h3>
+
+
+<h2>Intentos restantes: @ViewBag.intentosRestante </h2>
+<h2>Letras incorrectas: </h2> 
+  @{
+    string lista="";
+    foreach (char letra in ViewBag.letrasFallidas){
+    lista = lista + @letra + "-";
+    }}<h3>@lista</h3>
+
+<form action='@Url.Action("arriesgarLetra")' method="get"> 
  <input type="Text" name="letraNueva" placeholder="Ingresa una letra" required>
  <input type="Submit" value="Enviar">
 </form>
 
-
+<form action='@Url.Action("arriesgarPalabra")' method="get"> 
+ <input type="Text" name="palabra" placeholder="Ingresa la palabra" required>
+ <input type="Submit" value="Enviar">
+</form>
     
 
 <div>

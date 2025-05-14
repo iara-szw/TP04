@@ -22,16 +22,18 @@ public class HomeController : Controller
 
     public IActionResult PartidaActual()
     {
-        ViewBag.palabraActual = Partida.devolverPalabraActual();
+        ViewBag.palabraActual = Partida.palabraActual; 
+        ViewBag.letrasFallidas = Partida.letrasFallidas;
         if(ViewBag.palabraActual.Count == 0){
             Partida.crearPartida("arboleada");
-             ViewBag.palabraActual = Partida.devolverPalabraActual();
-             ViewBag.intentosRestante = Partida.cantIntentos;
+             ViewBag.palabraActual = Partida.palabraActual;
+            
         }
+        ViewBag.intentosRestante = Partida.cantIntentos;
         return View();
     }
 
-    [HttpPost]
+    
     public IActionResult arriesgarLetra(char letraNueva)
     {
         if(Partida.cantIntentos == 0){
@@ -42,9 +44,7 @@ public class HomeController : Controller
             }
            
         }
-         ViewBag.palabraActual = Partida.devolverPalabraActual();
-         ViewBag.intentosRestante = Partida.cantIntentos;
-        return View();
+        return RedirectToAction("PartidaActual");
     }
    
     public IActionResult arriesgarPalabra(string palabra)
@@ -56,12 +56,12 @@ public class HomeController : Controller
       public IActionResult resultado()
     {
             if(Partida.partidaGanada){
-                ViewBag.resultadoPartida = "Ganaste";
+                ViewBag.resultadoPartida = "Ganaste!";
             }else{
-                ViewBag.resultadoPartida = "Perdiste";
+                ViewBag.resultadoPartida = "Perdiste!";
             }
             ViewBag.intentos = 6-Partida.cantIntentos;
-              ViewBag.palabraActual = Partida.devolverPalabraActual();
+              ViewBag.palabra = Partida.palabra;
               return View();
     }
 
