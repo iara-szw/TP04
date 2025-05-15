@@ -60,8 +60,7 @@
         return esCorrecta;
     }
     static public bool encontroLaPalabra(string palabraArriesgada){
-        bool partidaGanada = false;
-        if(palabraArriesgada == palabra){
+        if(palabraArriesgada.ToUpper() == palabra){
             partidaGanada = true;
         }
         return partidaGanada;
