@@ -23,6 +23,7 @@
         partidaGanada = false;
     }  
 
+
     static private char convertirChar(char letra){
         string letraN = letra+"";
         letraN = letraN.ToUpper();

@@ -25,25 +25,32 @@ public class HomeController : Controller
         ViewBag.palabraActual = Partida.palabraActual; 
         ViewBag.letrasFallidas = Partida.letrasFallidas;
         if(ViewBag.palabraActual.Count == 0){
-            Partida.crearPartida("arboleada");
+             Partida.crearPartida("Guitarra");
              ViewBag.palabraActual = Partida.palabraActual;
             
         }
         ViewBag.intentosRestante = Partida.cantIntentos;
         return View();
     }
-
+     public IActionResult ModoDos()
+    {
+        return View();
+    }
+    public IActionResult IngresarPalabra(string palabraNueva){
+                Partida.crearPartida(palabraNueva);
+        
+        return RedirectToAction("PartidaActual");
+    }
     
     public IActionResult arriesgarLetra(char letraNueva)
     {
         if(Partida.cantIntentos == 0){
             return RedirectToAction("resultado");
         }else{
-            if(!Partida.siSeUso(letraNueva)){
+                  if(!Partida.siSeUso(letraNueva)){
                  Partida.esCorrecta(letraNueva);
             }
-           
-        }
+            }
         return RedirectToAction("PartidaActual");
     }
    
