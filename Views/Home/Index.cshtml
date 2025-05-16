@@ -1,10 +1,15 @@
-﻿@{
+﻿<head>
+@{
     ViewData["Title"] = "Ahorcado - Inicio";
 }
-
-<div>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
     <h1>Ahorcado</h1>
     <p>Atrevete a jugar</p>
-    <a href='@Url.Action("PartidaActual")'>Nueva Partida automatica</a>
-    <a href='@Url.Action("ModoDos")'>Nueva Partida versión 2 jugadores</a>
-</div>
+    <h3>Elegí una modalidad</h3>
+    <nav>
+        <a href='@Url.Action("PartidaActual")'>Solo</a>
+        <a href='@Url.Action("ModoDos")'> 2 jugadores</a>
+    </nav>
+</body>

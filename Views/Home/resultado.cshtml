@@ -1,10 +1,13 @@
+<head>
 @{
-    ViewData["Title"] = "Ahorcado - resultado";
+    ViewData["Title"] = "Ahorcado - Resultado";
 }
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 <div>
 
     <h1>Juego finalizado: @ViewBag.resultadoPartida</h1>
     <h2>La palabra era: @ViewBag.palabra</h2>
-    <h2>Usaste @ViewBag.intentos intentos</h2>
-
+    <h2>Usaste @ViewBag.intentos</h2>
 </div>
+<a href='@Url.Action("Index")'>Volver a jugar</a>

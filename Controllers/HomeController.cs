@@ -19,13 +19,13 @@ public class HomeController : Controller
         return View();
     }
 
-
+    int juegos=0;
     public IActionResult PartidaActual()
     {
         ViewBag.palabraActual = Partida.palabraActual; 
         ViewBag.letrasFallidas = Partida.letrasFallidas;
-        if(ViewBag.palabraActual.Count == 0){
-             Partida.crearPartida("Guitarra");
+        if(ViewBag.palabraActual.Count == 0 || juegos > 0){
+            Partida.crearPartida(Partida.listaPalabras[juegos]);
              ViewBag.palabraActual = Partida.palabraActual;
             
         }
@@ -69,6 +69,7 @@ public class HomeController : Controller
             }
             ViewBag.intentos = 6-Partida.cantIntentos;
               ViewBag.palabra = Partida.palabra;
+              juegos++;
               return View();
     }
 

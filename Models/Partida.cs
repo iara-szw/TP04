@@ -5,10 +5,13 @@
      static public List<char> letrasFallidas { get; private set; }
      static public int cantIntentos { get; private set; }
      static public bool partidaGanada { get; private set; }  
+     static public List<string> listaPalabras{get; set;}
     static Partida(){
         palabra = "";
         palabraActual = new List<char>();
         letrasFallidas = new List<char>();
+        listaPalabras = new List<string>();
+        listaPalabras.Add("Guitarra");
 
     }  
      static public void crearPartida(string PalabraNueva)
