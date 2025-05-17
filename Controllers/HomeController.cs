@@ -19,21 +19,25 @@ public class HomeController : Controller
         return View();
     }
 
-    int juegos=0;
+
+    bool DeDos = false;
     public IActionResult PartidaActual()
     {
-        ViewBag.palabraActual = Partida.palabraActual; 
+  
+        ViewBag.palabraActual = Partida.palabraActual;
         ViewBag.letrasFallidas = Partida.letrasFallidas;
-        if(ViewBag.palabraActual.Count == 0 || juegos > 0){
-            Partida.crearPartida(Partida.listaPalabras[juegos]);
-             ViewBag.palabraActual = Partida.palabraActual;
-            
+        if (ViewBag.palabraActual.Count == 0 && !DeDos)
+        {
+            Partida.crearPartida(Partida.elegirPalabra());
+            ViewBag.palabraActual = Partida.palabraActual;
+
         }
         ViewBag.intentosRestante = Partida.cantIntentos;
         return View();
     }
      public IActionResult ModoDos()
     {
+        DeDos = true;
         return View();
     }
     public IActionResult IngresarPalabra(string palabraNueva){
@@ -50,8 +54,13 @@ public class HomeController : Controller
                   if(!Partida.siSeUso(letraNueva)){
                  Partida.esCorrecta(letraNueva);
             }
-            }
-        return RedirectToAction("PartidaActual");
+        }
+        if (Partida.partidaGanada)
+        {
+            return RedirectToAction("resultado");
+        } else {
+            return RedirectToAction("PartidaActual");
+        }
     }
    
     public IActionResult arriesgarPalabra(string palabra)
@@ -69,7 +78,7 @@ public class HomeController : Controller
             }
             ViewBag.intentos = 6-Partida.cantIntentos;
               ViewBag.palabra = Partida.palabra;
-              juegos++;
+            Partida.ReiniciarJuego();
               return View();
     }
 
