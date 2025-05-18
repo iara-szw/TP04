@@ -13,32 +13,36 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\1.png",
-      "PackagePath": "staticwebassets\\img\\1.png"
-    },
-    {
-      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\2.png",
-      "PackagePath": "staticwebassets\\img\\2.png"
-    },
-    {
-      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\3.png",
-      "PackagePath": "staticwebassets\\img\\3.png"
-    },
-    {
-      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\4.png",
-      "PackagePath": "staticwebassets\\img\\4.png"
-    },
-    {
-      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\5.png",
-      "PackagePath": "staticwebassets\\img\\5.png"
-    },
-    {
-      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\6.png",
-      "PackagePath": "staticwebassets\\img\\6.png"
-    },
-    {
       "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\fondo.png",
       "PackagePath": "staticwebassets\\img\\fondo.png"
+    },
+    {
+      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\foto1.png",
+      "PackagePath": "staticwebassets\\img\\foto1.png"
+    },
+    {
+      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\foto2.png",
+      "PackagePath": "staticwebassets\\img\\foto2.png"
+    },
+    {
+      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\foto3.png",
+      "PackagePath": "staticwebassets\\img\\foto3.png"
+    },
+    {
+      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\foto4.png",
+      "PackagePath": "staticwebassets\\img\\foto4.png"
+    },
+    {
+      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\foto5.png",
+      "PackagePath": "staticwebassets\\img\\foto5.png"
+    },
+    {
+      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\foto6.png",
+      "PackagePath": "staticwebassets\\img\\foto6.png"
+    },
+    {
+      "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
       "Id": "C:\\Users\\juana\\Downloads\\TP04\\wwwroot\\js\\site.js",

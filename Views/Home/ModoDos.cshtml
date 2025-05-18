@@ -1,11 +1,14 @@
+<head>
 @{
     ViewData["Title"] = "Ahorcado - Ingresar Palabra";
-}
+} 
+<link rel="stylesheet" href="/css/style.css">
+</head>
 <div>
     <h1>Modo 2 jugadores</h1>
-    <h2>Ingresa la palabra para que tu compañero juegue:</h2>
+    <h2>Ingresá una palabra para que tu compañero juegue:</h2>
     <form action='@Url.Action("IngresarPalabra")' method="get">
-        <input type="text" name="palabraNueva" placeholder="Ingresa una palabra" required>
+        <input class="entrada" type="text" name="palabraNueva" placeholder="Ingresá una palabra..." required>
         <input type="Submit" value="Enviar">
     </form>
 </div>
