@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fg/OX44Ju4A=",
+  "dgSpecHash": "TvpY245LU04=",
   "success": true,
-  "projectFilePath": "C:\\Users\\iarit\\Downloads\\TP04-1\\TP04\\TP04.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\juana\\Downloads\\TP04\\TP04.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\juana\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\juana\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\juana\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\juana\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.14\\microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512"
+  ],
   "logs": []
 }
