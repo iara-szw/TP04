@@ -37,7 +37,7 @@ static class Partida
 
     static private void actualizarFoto()
     {
-        fotoAhorcado = "foto" + cantIntentos;
+        fotoAhorcado = "foto" + cantIntentos + ".png";
     }
     static public string elegirPalabra()
     {
@@ -122,7 +122,6 @@ static class Partida
         letrasFallidas.Clear();
         partidaGanada = false;
         palabra = "";
-
     }
 
 }
