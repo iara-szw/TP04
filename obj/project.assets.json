@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iarit\\Downloads\\TP04\\TP04.csproj",
+      "projectUniqueName": "C:\\Users\\iarit\\Downloads\\TP04-2\\TP04.csproj",
       "projectName": "TP04",
-      "projectPath": "C:\\Users\\iarit\\Downloads\\TP04\\TP04.csproj",
+      "projectPath": "C:\\Users\\iarit\\Downloads\\TP04-2\\TP04.csproj",
       "packagesPath": "C:\\Users\\iarit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iarit\\Downloads\\TP04\\obj\\",
+      "outputPath": "C:\\Users\\iarit\\Downloads\\TP04-2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\iarit\\AppData\\Roaming\\NuGet\\NuGet.Config",
