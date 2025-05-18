@@ -5,7 +5,9 @@ static class Partida
     static public List<char> letrasFallidas { get; private set; }
     static public int cantIntentos { get; private set; }
     static public bool partidaGanada { get; private set; }
-    static public List<string> listaPalabras { get; set; }
+    static public List<string> listaPalabras { get; private set; }
+
+    static public string fotoAhorcado { get; private set; }
     static Partida()
     {
         palabra = "";
@@ -33,6 +35,10 @@ static class Partida
         listaPalabras.Add("Bowling");
     }
 
+    static private void actualizarFoto()
+    {
+        fotoAhorcado = "foto" + cantIntentos;
+    }
     static public string elegirPalabra()
     {
         Random rndnum = new Random();
@@ -96,6 +102,7 @@ static class Partida
         {
             letrasFallidas.Add(letra);
             cantIntentos--;
+            actualizarFoto();
         }
         return esCorrecta;
     }

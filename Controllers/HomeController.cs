@@ -33,6 +33,7 @@ public class HomeController : Controller
 
         }
         ViewBag.intentosRestante = Partida.cantIntentos;
+        ViewBag.fotoAhorcado = Partida.fotoAhorcado;
         return View();
     }
      public IActionResult ModoDos()
