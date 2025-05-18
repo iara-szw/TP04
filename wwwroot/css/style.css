@@ -96,6 +96,7 @@ body .pizarron h3 {
     -1px -1px 0 rgba(207, 207, 207, 0.5),
     1px -1px 1px rgba(255, 255, 255, 0.5);
   border: none;
+  margin-left:2%;
 
 }
 body div{  border: none;
@@ -139,6 +140,7 @@ div .hangman{
   float: right;
   margin-top: -15%;
   margin-right:50%;
+ 
 }
 footer{
     border:none;

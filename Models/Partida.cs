@@ -6,7 +6,6 @@ static class Partida
     static public int cantIntentos { get; private set; }
     static public bool partidaGanada { get; private set; }
     static public List<string> listaPalabras { get; private set; }
-
     static public string fotoAhorcado { get; private set; }
     static Partida()
     {
@@ -15,6 +14,7 @@ static class Partida
         letrasFallidas = new List<char>();
         listaPalabras = new List<string>();
         agregarPalabras();
+        fotoAhorcado = "";
 
     }
     static private void agregarPalabras()
@@ -38,6 +38,7 @@ static class Partida
     static private void actualizarFoto()
     {
         fotoAhorcado = "foto" + cantIntentos + ".png";
+       
     }
     static public string elegirPalabra()
     {
@@ -56,6 +57,7 @@ static class Partida
         }
         cantIntentos = 6;
         partidaGanada = false;
+        fotoAhorcado = "foto6.png";
     }
 
 
@@ -100,7 +102,7 @@ static class Partida
         }
         else
         {
-            letrasFallidas.Add(letra);
+            letrasFallidas.Add(letraNueva);
             cantIntentos--;
             actualizarFoto();
         }
